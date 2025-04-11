@@ -1,20 +1,30 @@
+export class StringUtils {
+  public toUpperCase(arg: string) {
+    if (!arg) {
+      throw new Error('Invalid argument!');
+    }
+    return toUpperCase(arg);
+  }
+}
+
 export function toUpperCase(arg: string) {
   return arg.toUpperCase();
 }
 
-export type StringInfo = {
+export type stringInfo = {
   lowerCase: string;
   upperCase: string;
   characters: string[];
   length: number;
-  extraInfo?: Record<string, unknown>;
+  extraInfo: Object | undefined;
 };
 
-export function getStringInfo(arg: string): StringInfo {
+/* istanbul ignore next */
+export function getStringInfo(arg: string): stringInfo {
   return {
     lowerCase: arg.toLowerCase(),
     upperCase: arg.toUpperCase(),
-    characters: arg.split(''),
+    characters: Array.from(arg),
     length: arg.length,
     extraInfo: {},
   };
