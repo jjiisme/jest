@@ -4,9 +4,9 @@
   "description": "ts-unit-test",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "ts-node src/app/server_app/Launcher.ts"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
